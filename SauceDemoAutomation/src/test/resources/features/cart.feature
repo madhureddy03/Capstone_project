@@ -32,9 +32,9 @@ Feature: Cart functionality on SauceDemo
     And user clicks on Checkout
     Then checkout page should be displayed
     And user should see Checkout info form
-    When user enters first name "Ashutosh"
-    And user enters last name "Soni"
-    And user enters postal code "470004"
+    When user enters first name "Madhu"
+    And user enters last name "Reddy"
+    And user enters postal code "520008"
     And user clicks on Continue
     Then user should be navigated to the Checkout Overview page
 
@@ -45,8 +45,8 @@ Feature: Cart functionality on SauceDemo
     Then checkout page should be displayed
     And user should see Checkout info form
     When user enters first name ""
-    And user enters last name "Soni"
-    And user enters postal code "470004"
+    And user enters last name "reddy"
+    And user enters postal code "520008"
     And user clicks on Continue
     Then user should see cart error message "First Name is required"
 
@@ -56,9 +56,9 @@ Feature: Cart functionality on SauceDemo
     And user clicks on Checkout
     Then checkout page should be displayed
     And user should see Checkout info form
-    When user enters first name "Ashutosh"
+    When user enters first name "Madhu"
     And user enters last name ""
-    And user enters postal code "470004"
+    And user enters postal code "520008"
     And user clicks on Continue
     Then user should see cart error message "Last Name is required"
 
@@ -68,8 +68,8 @@ Feature: Cart functionality on SauceDemo
     And user clicks on Checkout
     Then checkout page should be displayed
     And user should see Checkout info form
-    When user enters first name "Ashutosh"
-    And user enters last name "Soni"
+    When user enters first name "Madhu"
+    And user enters last name "Reddy"
     And user enters postal code ""
     And user clicks on Continue
     Then user should see cart error message "Postal Code is required"
@@ -79,9 +79,9 @@ Feature: Cart functionality on SauceDemo
     When user adds "Sauce Labs Onesie" to the cart
     And user clicks on the cart icon
     And user clicks on Checkout
-    And user enters first name "Ashu"
-    And user enters last name "Soni"
-    And user enters postal code "470002"
+    And user enters first name "Madhu"
+    And user enters last name "Reddy"
+    And user enters postal code "520008"
     And user clicks on Continue
     And user clicks on Finish
     Then user should see order confirmation message "Thank you for your order!"

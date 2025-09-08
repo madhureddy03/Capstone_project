@@ -1,0 +1,260 @@
+<html>
+<head>
+<title>TestNG:  Default test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Default test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>21/3/0</td>
+</tr><tr>
+<td>Started on:</td><td>Thu Sep 04 11:11:27 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>238 seconds (238851 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify all footer logos are visible", "Homepage Footer Verification on SauceDemo"</td>
+<td><div><pre>java.lang.AssertionError: No footer logos found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at stepdefinitions.FooterSteps.all_footer_logos_should_be_displayed(FooterSteps.java:25)
+	at ✽.all footer logos should be displayed(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/footer.feature:8)
+</pre></div><a href='#' onClick='toggleBox("stack-trace48339760", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace48339760'><pre>java.lang.AssertionError: No footer logos found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at stepdefinitions.FooterSteps.all_footer_logos_should_be_displayed(FooterSteps.java:25)
+	at ✽.all footer logos should be displayed(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/footer.feature:8)
+</pre></div></td>
+<td>17</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Clear all items from the cart", "Cart functionality on SauceDemo"</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: remove-sauce-labs-bike-light (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: /var/folders/v3/kwyxtxws3hx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65189/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c2ba1ea82f1694c6372c1b8839768a2f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at utils.DriverFactory.waitForElementClickable(DriverFactory.java:66)
+	at pages.CartPage.removeProduct(CartPage.java:65)
+	at stepdefinitions.CartSteps.user_removes_from_the_cart(CartSteps.java:62)
+	at ✽.user removes &quot;Sauce Labs Bike Light&quot; from the cart(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/cart.feature:95)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1980895595", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1980895595'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.id: remove-sauce-labs-bike-light (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: &apos;4.15.0&apos;, revision: &apos;1d14b5521b&apos;
+System info: os.name: &apos;Mac OS X&apos;, os.arch: &apos;aarch64&apos;, os.version: &apos;15.0.1&apos;, java.version: &apos;21.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 139.0.7258.155, chrome: {chromedriverVersion: 139.0.7258.154 (9e0d6b2b47f..., userDataDir: /var/folders/v3/kwyxtxws3hx...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65189}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:65189/devtoo..., se:cdpVersion: 139.0.7258.155, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: c2ba1ea82f1694c6372c1b8839768a2f
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+	at utils.DriverFactory.waitForElementClickable(DriverFactory.java:66)
+	at pages.CartPage.removeProduct(CartPage.java:65)
+	at stepdefinitions.CartSteps.user_removes_from_the_cart(CartSteps.java:62)
+	at ✽.user removes &quot;Sauce Labs Bike Light&quot; from the cart(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/cart.feature:95)
+</pre></div></td>
+<td>26</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify social media icons are visible", "Homepage Footer Verification on SauceDemo"</td>
+<td><div><pre>java.lang.AssertionError: No social icons found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at stepdefinitions.FooterSteps.all_social_media_icons_should_be_displayed(FooterSteps.java:41)
+	at ✽.all social media icons should be displayed(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/footer.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace292841327", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace292841327'><pre>java.lang.AssertionError: No social icons found expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:110)
+	at org.testng.Assert.failNotEquals(Assert.java:1577)
+	at org.testng.Assert.assertTrue(Assert.java:56)
+	at stepdefinitions.FooterSteps.all_social_media_icons_should_be_displayed(FooterSteps.java:41)
+	at ✽.all social media icons should be displayed(file:///Users/hammadafroz/eclipse-workspace/SauseAutomation/src/test/resources/features/footer.feature:12)
+</pre></div></td>
+<td>17</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Proceed to checkout with missing last name", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>10</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add multiple items to the cart", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>11</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Sort products by Price (low to high)", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify default dropdown selection", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Complete checkout and finish order", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>19</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login failure with blank input", "Login functionality on SauceDemo"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Add a single item to the cart", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>8</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Proceed to checkout with missing first name", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Proceed to checkout with missing postal code", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Sort products by Name (A to Z)", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Successful login with valid credentials", "Login functionality on SauceDemo"</td>
+<td></td>
+<td>4</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login failure with invalid credentials", "Login functionality on SauceDemo"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify footer copyright text", "Homepage Footer Verification on SauceDemo"</td>
+<td></td>
+<td>6</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Sort products by Name (Z to A)", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Sort products by Price (high to low)", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "View cart from cart icon", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>8</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Verify dropdown options", "Product sorting on SauceDemo homepage"</td>
+<td></td>
+<td>5</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login failure with blank username only", "Login functionality on SauceDemo"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Remove an item from the cart", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>32</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Proceed to checkout with valid information", "Cart functionality on SauceDemo"</td>
+<td></td>
+<td>9</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+<tr>
+<td title='runner.TestRunner.runScenario()'><b>runScenario</b><br>Test class: runner.TestRunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Login failure with blank password only", "Login functionality on SauceDemo"</td>
+<td></td>
+<td>2</td>
+<td>runner.TestRunner@9d5509a</td></tr>
+</table><p>
+</body>
+</html>
